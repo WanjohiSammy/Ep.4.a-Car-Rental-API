@@ -38,48 +38,13 @@ This clean separation of concerns keeps things organized and manageable, making 
 - In-depth exploration of extension methods, showcasing their versatility in enhancing existing types and functionality in C#.
 - Practical examples illustrating various scenarios where extension methods can be applied, empowering developers to leverage C# language features effectively.
 
-## Layers Overview
-1. **Api Layer:**
-- Crafted with ASP.NET Core Web API. 
-- Gateway to our system, handling incoming HTTP requests and delivering well-structured responses.
-- Contains controllers, program.cs and appsettings for application configurations
-- Preoject dependencies: Application and Data Layers.
-
-2. **Application Layer:**
-- Encompasses business rules and logic.
-- Contain components to implement these rules, and profiles for AutoMapper, which helps in mapping DTOs to domain entities and vice versa.
-- Has project dependency on Domain Layer
-
-3. **Data Layer:**
-- Manages the interaction with the database.
-- Includes DbContext, Migrations, and Repository implementations on how to handle data in the database.
-- References Domain Layer
-
-4. **Domain Layer:**
-- Defines entities that represent the business objects like User and Car entities in our case.
-- Contains repository interfaces that are implemented in the Data Layer.
-- Project dependencies: Utility Layer.
-
-5. **Utility Layer:**
-- Houses helper methods and internal or external services.
-- Also Provides utility functions that can be shared across different layers.
-- Project dependencies: Contracts Layer
-
-6. **Contracts Layer:**
-- Defines the communication contracts between API and the outside world.
-- Project dependencies: Reference Commons Layer
-
-7. **Commons Layer:**
-- Contains constants and enums that are shared across the application.
-- Provides a centralized place for maintaining commonly used elements.
-- No project reference, indicating it's a standalone layer.
-
 ## Get Started
+1. Clone the repo
 ```sh
 git clone https://github.com/WanjohiSammy/Ep.3-Car-Rental-API.git
 ```
 
-Add `appsettings.Development.json` file in CarRental.Api layer:
+2. Add `appsettings.Development.json` file in CarRental.Api layer:
 
 ```json
 {
@@ -95,5 +60,10 @@ Add `appsettings.Development.json` file in CarRental.Api layer:
 }
 ```
 
-Build the project to restore packages and ensure it follows the Project Structure.
+3. **Build the project to restore packages and ensure it follows the Project Structure.**
+
+## Layers Overview
+Project follows a **Layered Architecture**, which is a good practice for building scalable and maintainable applications. Each layer has its specific responsibilities. This structure promotes separation of concerns, making it easier to maintain and test each layer independently. 
+
+![Project-Structure-Diagram](https://github.com/WanjohiSammy/Ep.3-Car-Rental-API/assets/12447806/fe5712c4-5016-48d6-8d26-baf8201033f4)
 
